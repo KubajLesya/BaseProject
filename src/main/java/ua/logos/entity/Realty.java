@@ -7,6 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Table;
+
+import org.springframework.web.multipart.MultipartFile;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -18,6 +21,8 @@ import lombok.Setter;
 @Entity
 @Table(name = "realty")
 public class Realty extends BaseEntity {
+	   // @Column(nullable = false, unique = true)
+	   // private String realtyId;
 	    @Enumerated(EnumType.STRING)
 		private Type type;
 	    @Enumerated(EnumType.STRING)
@@ -30,4 +35,5 @@ public class Realty extends BaseEntity {
 	    private String imageUrl;
 	    @Column(name = "price", columnDefinition = "DECIMAL(10, 2)")
 	    private BigDecimal price;
+	    
 }

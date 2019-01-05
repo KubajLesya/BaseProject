@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="public/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container">
+		<div class="row col-md-6 col-md-offset-3">
+			<h4 class="text-center">Add poster</h4>
+			
+			<form id="addPosterForm">
+				<div class="form-group">
+					<label>Poster Action</label>
+					<select class="form-control" id="posterAction">
+						<option value="SELLING">Selling</option>
+						<option value="RENT">Rent</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label>Poster Realty ID</label>
+					<input type="number" class="form-control" id="posterRealtyID">
+				</div>
+			
+				<div class="form-group">
+					<label>Poster Location ID</label>
+					<input type="number" class="form-control" id="posterLocationID">
+				</div>
+				<div class="form-group">
+					<label>Poster Realtors ID</label>
+					<input type="number" class="form-control" id="posterRealtorsID">
+				</div>		
+				<button type="button" class="btn btn-success btn-block">Add poster</button>
+			</form>
+	</div>
+	</div>
+	<div class="container">
+		<div class="row col-md-6 col-md-offset-3">
+			<h4 class="text-center">Add realty</h4>
+			
+			<form id="addRealtyForm">
+				<div class="form-group">
+					<label>Realty Type</label>
+					<select class="form-control" id="realtyType">
+						<option value="FLAT">Flat</option>
+						<option value="HOUSE">House</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label>Realty NumberOfRooms</label>
+					<select class="form-control" id="realtyNumberOfRooms">
+						<option value="ONE">One</option>
+						<option value="TWO">Two</option>
+						<option value="THREE">Three</option>
+						<option value="FOUR">Four</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label>Realty State</label>
+					<select class="form-control" id="realtyState">
+						<option value="VIP">Vip</option>
+						<option value="EURO_RENOVATION">Euro_renovation</option>
+						<option value="UNMOUNTED">Unmounted</option>
+					</select>
+				</div>
+			
+				<div class="form-group">
+					<label>Realty Description</label>
+					<input type="text" class="form-control" id="realtyDescription">
+				</div>
+				<div class="form-group">
+					<label>Realty ImageUrl</label>
+					<input type="file" class="form-control" id="realtyImageUrl">
+				</div>
+				<div class="form-group">
+					<label>Realty Price</label>
+					<input type="number" class="form-control" id="realtyPrice">
+				</div>		
+				<button type="button" class="btn btn-success btn-block">Add realty</button>
+			</form>
+	</div>
+	</div>
+	<div class="container">
+		<div class="row col-md-6 col-md-offset-3">
+			<h4 class="text-center">Add location</h4>
+			
+			<form id="addLocationForm">
+				<div class="form-group">
+					<label>Location Country</label>
+					<input type="text" class="form-control" id="locationCountry">
+				</div>
+			
+				<div class="form-group">
+					<label>Location Region</label>
+					<input type="text" class="form-control" id="locationRegion">
+				</div>	
+				<div class="form-group">
+					<label>Location City</label>
+					<input type="text" class="form-control" id="locationCity">
+				</div>
+			
+				<div class="form-group">
+					<label>Location Street</label>
+					<input type="text" class="form-control" id="locationStreet">
+				</div>
+				<button type="button" class="btn btn-success btn-block">Add location</button>
+			</form>
+	</div>
+	</div>
+	<div class="container">
+		<div class="row col-md-6 col-md-offset-3">
+			<h4 class="text-center">Add realtors</h4>
+			
+			<form id="addRealtorsForm">
+				<div class="form-group">
+					<label>Realtors FullName</label>
+					<input type="text" class="form-control" id="realtorsFullName">
+				</div>
+			
+				<div class="form-group">
+					<label>Realtors AgencyName</label>
+					<input type="text" class="form-control" id="realtorsAgencyName">
+				</div>	
+				<div class="form-group">
+					<label>Realtors Telephone</label>
+					<input type="text" class="form-control" id="realtorsTelephone">
+				</div>
+			
+				<button type="button" class="btn btn-success btn-block">Add realtors</button>
+			</form>
+	</div>
+	</div>
+<div class="container text-center">
+	<h3>Poster list</h3>
+</div>
+<div class="container">
+	<div class="row">
+		<table class="table table-striped" id="postersTable">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Action</th>
+					<th>Realty</th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th>Location</th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th>Realtors</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+	</div>
+</div>
+<div class="container text-center">
+	<h3>Realty list</h3>
+</div>
+<div class="container">
+	<div class="row">
+		<table class="table table-striped" id="realtiesTable">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Type</th>
+					<th>NumberOfRooms</th>
+					<th>State</th>
+					<th>Description</th>
+					<th>ImageUrl</th>
+					<th>Price</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+	</div>
+</div>
+
+
+<div class="container text-center">
+	<h3>Location list</h3>
+</div>
+<div class="container">
+	<div class="row">
+		<table class="table table-striped" id="locationsTable">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Country</th>
+					<th>Region</th>
+					<th>City</th>
+					<th>Street</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+	</div>
+</div>
+<div class="container text-center">
+	<h3>Realtors list</h3>
+</div>
+<div class="container">
+	<div class="row">
+		<table class="table table-striped" id="realtorsTable">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>FullName</th>
+					<th>AgencyName</th>
+					<th>Telephone</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+	</div>
+</div>
+	<script src="public/js/jquery.min.js"></script>
+	<script src="public/js/bootstrap.min.js"></script>
+	<script>
+		$(document).ready(function () {
+            let token = window.localStorage.getItem('auth_token');
+            if(token) {
+                $.ajaxSetup({
+                    headers: {
+                        'Authorization': 'Bearer ' + token
+                    }
+                })
+                getPosters();
+            }
+            getRealties();
+			getPosters();
+			//getRealties();
+			getRealtors();
+			getLocations();
+			
+			$(document).on('click', '#locationsTable tbody button', function(e) {
+				console.log(e.target.id);
+				let elementId = e.target.id;
+				let locationId = elementId.split('-')[1];
+				console.log(locationId);
+				deleteLocation(locationId);
+			});
+			
+			$(document).on('click', '#realtorsTable tbody button', function(e) {
+				console.log(e.target.id);
+				let elementId = e.target.id;
+				let realtorsId = elementId.split('-')[1];
+				console.log(realtorsId);
+				deleteRealtors(realtorsId);
+			});
+			
+			$(document).on('click', '#realtiesTable tbody button', function(e) {
+				console.log(e.target.id);
+				let elementId = e.target.id;
+				let realtyId = elementId.split('-')[1];
+				console.log(realtyId);
+				deleteRealty(realtyId);
+			});
+			
+			$(document).on('click', '#postersTable tbody button', function(e) {
+				console.log(e.target.id);
+				let elementId = e.target.id;
+				let posterId = elementId.split('-')[1];
+				console.log(posterId);
+				deletePoster(posterId);
+				//console.log('click');
+			});
+			
+			$(document).on('change', '#realtiesTable tbody input', function(e) {
+				let elementId = e.target.id;
+				let realtyId = elementId.split('-')[1];
+				console.log(realtyId);
+				uploadFile(realtyId);
+			});
+			$('#addPosterForm button').click(function(e) {
+				e.preventDefault();
+				addPoster();
+			});
+			$('#addRealtyForm button').click(function(e) {
+				e.preventDefault();
+				addRealty();
+			});
+			$('#addLocationForm button').click(function(e) {
+				e.preventDefault();
+				addLocation();
+			});
+			$('#addRealtorsForm button').click(function(e) {
+				e.preventDefault();
+				addRealtors();
+			});
+						
+		});
+		
+		function uploadFile(realtyId) {
+			let formData = new FormData();
+			formData.append('file', $('#image-' + realtyId)[0].files[0]);
+			
+			$.ajax({
+				url: 'http://localhost:8080/realty/upload/object/' + realtyId + '/upload',
+				method: 'POST',
+				contentType: false,
+				processData: false,
+				data: formData,
+				complete: function(response) {
+					console.log(response);
+					$('#realtiesTable tbody').empty();
+					getRealties();
+				}
+			});
+		}
+		
+		function addPoster() {
+			let action = $('#posterAction').val();
+			let realty = $('#posterRealtyID').val();
+			let location = $('#posterLocationID').val();
+			let realtors = $('#posterRealtorsID').val();
+						
+			console.log(action + " " + realty + " "
+					   + location + " " + realtors);
+						
+			let poster = {
+				action : action,
+				realty : {
+					id : realty
+				},
+				location : {
+					id : location
+				},
+				realtors : {
+					id : realtors
+				}
+			};
+			
+			$.ajax({
+				url:'http://localhost:8080/poster',
+				method: 'POST',
+				dataType: 'json',
+				contentType: 'application/json',
+				data: JSON.stringify(poster),
+				
+				complete: function(response) {
+					if(response.status ==201) {
+						$('#postersTable tbody').empty();
+						getPosters();
+						$('#addPosterForm')[0].reset();
+					}
+				}
+			})
+		}
+		/*function uploadObjectFile() {
+			let type = $('#realtyType').val();
+			let numberOfRooms = $('#realtyNumberOfRooms').val();
+			let state = $('#realtyState').val();
+			let description = $('#realtyDescription').val();
+			let formData = new FormData();
+			formData.append('file', $('#realtyImageUrl-' + realtyId)[0].files[0]);
+			
+			let price = $('#realtyPrice').val();
+			
+			console.log(type + " " + numberOfRooms + " "
+					   + state + " " + description + " " + imageUrl+ " " + price);
+			
+			
+			let realty = {
+				type : type,
+				numberOfRooms : numberOfRooms,
+				state : state,
+				description: description,
+				imageUrl : imageUrl,
+				price: price
+			};
+			
+			$.ajax({
+				url:'http://localhost:8080/realty/upload/object',
+				method: 'POST',
+				dataType: 'json',
+				contentType: 'application/json',
+				data: JSON.stringify(realty),
+				
+				complete: function(response) {
+					if(response.status ==201) {
+						$('#realtiesTable tbody').empty();
+						getRealties();
+						$('#uploadObjectFileForm')[0].reset();
+					}
+				}
+			})
+		}*/
+		function addRealty() {
+			let type = $('#realtyType').val();
+			let numberOfRooms = $('#realtyNumberOfRooms').val();
+			let state = $('#realtyState').val();
+			let description = $('#realtyDescription').val();
+			//let imageUrl = $('#realtyImageUrl').val();
+			let price = $('#realtyPrice').val();
+			
+			console.log(type + " " + numberOfRooms + " "
+					   + state + " " + description + " " + price);
+			
+			
+			let realty = {
+				type : type,
+				numberOfRooms : numberOfRooms,
+				state : state,
+				description: description,
+				
+				price: price
+			};
+			
+			$.ajax({
+				url:'http://localhost:8080/realty/upload/object',
+				method: 'POST',
+				dataType: 'json',
+				contentType: 'application/json',
+				data: JSON.stringify(realty),
+				
+				complete: function(response) {
+					if(response.status ==201) {
+						$('#realtiesTable tbody').empty();
+						getRealties();
+						$('#addRealtyForm')[0].reset();
+					}
+				}
+			})
+		}
+		function addLocation() {
+			let country = $('#locationCountry').val();
+			let region = $('#locationRegion').val();
+			let city = $('#locationCity').val();
+			let street = $('#locationStreet').val();			
+			console.log(country + " " + region + " "
+					   + city + " " + street);
+			
+			
+			let location = {
+				country : country,
+				region : region,
+				city : city,
+				street : street
+				};
+			
+			$.ajax({
+				url:'http://localhost:8080/location',
+				method: 'POST',
+				dataType: 'json',
+				contentType: 'application/json',
+				data: JSON.stringify(location),
+				
+				complete: function(response) {
+					if(response.status ==201) {
+						$('#locationsTable tbody').empty();
+						getLocations();
+						$('#addLocationForm')[0].reset();
+					}
+				}
+			})
+		}
+		function addRealtors() {
+			let fullName = $('#realtorsFullName').val();
+			let agencyName = $('#realtorsAgencyName').val();
+			let telephone = $('#realtorsTelephone').val();
+						
+			console.log(fullName + " " + agencyName + " "
+					   + telephone);
+			
+			
+			let realtors = {
+				fullName : fullName,
+				agencyName : agencyName,
+				telephone : telephone
+				};
+			
+			$.ajax({
+				url:'http://localhost:8080/realtors',
+				method: 'POST',
+				dataType: 'json',
+				contentType: 'application/json',
+				data: JSON.stringify(realtors),
+				
+				complete: function(response) {
+					if(response.status ==201) {
+						$('#realtorsTable tbody').empty();
+						getRealtors();
+						$('#addRealtorsForm')[0].reset();
+					}
+				}
+			})
+		}
+		
+		function getLocations(){
+			$.ajax({
+				url: "http://localhost:8080/location",
+				metod: "GET",
+				dataType: "json",
+				contentType: "application/json",
+				success: function(response){
+					console.log(response);
+					$.each(response, function(key, value) {
+						$('#locationsTable tbody').append(
+						`
+						<tr>
+								<td>${value.id}</td>
+                                 <td>${value.country}</td>
+								<td>${value.region}</td>
+								<td>${value.city}</td>
+								<td>${value.street}</td>
+								<td>
+									<button class="btn btn-danger" id="location-${value.id}">Delete</button>
+								</td>							
+						</tr>
+						
+						`
+						
+						);
+					});
+				}
+			})
+			}
+		function getRealtors(){
+			$.ajax({
+				url: "http://localhost:8080/realtors",
+				metod: "GET",
+				dataType: "json",
+				contentType: "application/json",
+				success: function(response){
+					console.log(response);
+					$.each(response, function(key, value) {
+						$('#realtorsTable tbody').append(
+						`
+						<tr>
+								<td>${value.id}</td>
+                                
+                                <td>${value.fullName}</td>
+                                <td>${value.agencyName}</td>
+								<td>${value.telephone}</td>
+								<td>
+									<button class="btn btn-danger" id="realtors-${value.id}">Delete</button>
+								</td>
+															
+						</tr>
+						
+						`
+						
+						);
+					});
+				}
+			})
+			}
+		function getRealties(){
+			$.ajax({
+				url: "http://localhost:8080/realty",
+				metod: "GET",
+				dataType: "json",
+				contentType: "application/json",
+				success: function(response){
+					console.log(response);
+					$.each(response, function(key, value) {
+						$('#realtiesTable tbody').append(
+						`
+						<tr>
+								<td>${value.id}</td>
+                                
+                                <td>${value.type}</td>
+								<td>${value.numberOfRooms}</td>
+								<td>${value.type}</td>
+								<td>${value.description}</td>
+								<td>
+								<img src="data:image/png;base64, ${value.imageUrl}"width="150px">
+								</td>
+								<td>${value.price}</td>
+								<td>
+									<button class="btn btn-danger" id="realty-${value.id}">Delete</button>
+								</td>
+															
+						</tr>
+						
+						`
+						);
+					});
+				}
+			})
+			}
+		
+		function getPosters(){
+			$.ajax({
+				url: "http://localhost:8080/poster",
+				metod: "GET",
+				dataType: "json",
+				contentType: "application/json",
+				success: function(response){
+					console.log(response);
+					$.each(response, function(key, value) {
+						$('#postersTable tbody').append(
+						`
+						<tr>
+								<td>${value.id}</td>
+                                <td>${value.action}</td>
+                                <td>${value.realty.type}</td>
+								<td>${value.realty.numberOfRooms}</td>
+								<td>${value.realty.type}</td>
+								<td>${value.realty.description}</td>
+								<td>
+								<img src="data:image/png;base64, ${value.realty.imageUrl}" width="150px">
+								</td>
+								<td>${value.realty.price}</td>
+								
+                                <td>${value.location.country}</td>
+								<td>${value.location.region}</td>
+								<td>${value.location.city}</td>
+								<td>${value.location.street}</td>
+
+                                <td>${value.realtors.fullName}</td>
+                                <td>${value.realtors.agencyName}</td>
+								<td>${value.realtors.telephone}</td>
+								<td>
+									<button class="btn btn-danger" id="posters-${value.id}">Delete</button>
+								</td>
+						</tr>
+						
+						`
+												
+						);
+					});
+				}
+			})
+		}
+		function deleteLocation(locationId) {
+			$.ajax({
+				url: "http://localhost:8080/location/" + locationId,
+				method: 'DELETE',
+				success: function(response) {
+					console.log(response);
+					$('#locationsTable tbody').empty();
+					getLocations();
+				} 
+			});
+		}
+		function deleteRealtors(realtorsId) {
+			$.ajax({
+				url: "http://localhost:8080/realtors/" + realtorsId,
+				method: 'DELETE',
+				success: function(response) {
+					console.log(response);
+					$('#realtorsTable tbody').empty();
+					getRealtors();
+				} 
+			});
+		}
+		function deleteRealty(realtyId) {
+			$.ajax({
+				url: "http://localhost:8080/realty/" + realtyId,
+				method: 'DELETE',
+				success: function(response) {
+					console.log(response);
+					$('#realtiesTable tbody').empty();
+					getRealties();
+				} 
+			});
+		}
+		function deletePoster(posterId) {
+			$.ajax({
+				url: "http://localhost:8080/poster/" + posterId,
+				method: 'DELETE',
+				success: function(response) {
+					console.log(response);
+					$('#postersTable tbody').empty();
+					getPosters();
+				} 
+			});
+		}
+	</script>	
+</body>
+</html>

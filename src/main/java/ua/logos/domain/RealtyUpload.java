@@ -2,27 +2,20 @@ package ua.logos.domain;
 
 import java.math.BigDecimal;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
+import org.springframework.web.multipart.MultipartFile;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import ua.logos.entity.NumberOfRooms;
 import ua.logos.entity.State;
 import ua.logos.entity.Type;
-
 @Data
-@Builder
 @NoArgsConstructor
-@AllArgsConstructor
-
-public class RealtyDTO {
-	//private String realtyId;
-	private Long id;
+public class RealtyUpload {
 	private Type type;
     private NumberOfRooms numberOfRooms; 
     private State state;
 	private String description;
-    private String imageUrl;
     private BigDecimal price;
-	
+	private MultipartFile file;
 }

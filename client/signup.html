@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="public/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <form id="signupForm">
+            First Name: <input type="text" id="firstName"> <br>
+            Last Name: <input type="text" id="lastName"> <br>
+            Username: <input type="text" id="username"> <br>
+            Password: <input type="password" id="password"> <br>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <script src="public/js/jquery.min.js"></script>
+    <script src="public/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#signupForm').submit(function(e) {
+                e.preventDefault();
+                signup();
+            });
+        });
+        function signup() {
+            let user = {
+                firstName: $('#firstName').val(),
+                lastName: $('#lastName').val(),
+                username: $('#username').val(),
+                password: $('#password').val()
+            }
+            console.log(user);
+            $.ajax({
+                url: 'http://localhost:8080/users/signup',
+                method: 'POST',
+                data: JSON.stringify(user),
+                contentType: 'application/json',
+                complete: function(data) {
+                    if(data.status == 201) {
+                        alert('User created');
+                    }
+                }
+            })
+        }
+    </script>
+
+</body>
+</html>

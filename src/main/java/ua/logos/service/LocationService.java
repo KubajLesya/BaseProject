@@ -2,9 +2,11 @@ package ua.logos.service;
 
 import java.util.List;
 
-import org.springframework.http.ResponseEntity;
+
 
 import ua.logos.domain.LocationDTO;
+
+import ua.logos.domain.filter.SimpleFilter;
 
 
 
@@ -16,4 +18,6 @@ public interface LocationService {
 	List<LocationDTO> findAllLocation();
 	
 	void deleteLocation(Long id);
+	
+	List<LocationDTO> findAllPostersBySpecification(SimpleFilter filter);
 }

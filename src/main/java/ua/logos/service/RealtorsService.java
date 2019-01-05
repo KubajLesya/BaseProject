@@ -3,7 +3,7 @@ package ua.logos.service;
 import java.util.List;
 
 import ua.logos.domain.RealtorsDTO;
-import ua.logos.entity.Realtors;
+
 
 public interface RealtorsService {
 	

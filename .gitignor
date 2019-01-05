@@ -1,0 +1,7 @@
+.classpath
+git status
+git remote add origin https://github.com/KubajLesya/BaseProject.git
+git add .
+git commit -m"BaseProject"
+git push origin master
+git pull origin master

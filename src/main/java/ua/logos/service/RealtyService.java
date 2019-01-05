@@ -2,8 +2,9 @@ package ua.logos.service;
 
 import java.util.List;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import ua.logos.domain.RealtyDTO;
-import ua.logos.entity.Realty;
 
 public interface RealtyService {
 
@@ -14,5 +15,8 @@ void saveRealty(RealtyDTO realty);
 	List<RealtyDTO> findAllRealty();
 	
 	void deleteRealty(Long id);
+	void saveFile(MultipartFile file);
+	String getFile(String fileName);
+//	void uploadImage(MultipartFile file, String realtyId);
 }
 

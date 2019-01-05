@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="public/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <form id="signinForm">
+            Username: <input type="text" id="username"> <br>
+            Password: <input type="password" id="password"> <br>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script src="public/js/jquery.min.js"></script>
+    <script src="public/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#signinForm').submit(function(e) {
+                e.preventDefault();
+                signin();
+            });
+        });
+        function signin() {
+            let user = {
+                username: $('#username').val(),
+                password: $('#password').val()
+            }
+            console.log(user);
+            $.ajax({
+                url: 'http://localhost:8080/users/signin',
+                method: 'POST',
+                data: JSON.stringify(user),
+                contentType: 'application/json',
+                complete: function(data) {
+                    if(data.status == 200) {
+                        console.log(data);
+                        window.localStorage.setItem('auth_token', data.responseJSON.token);
+						window.localStorage.setItem('auth_role', data.responseJSON.role);
+						console.log(data.responseJSON);
+						
+						if(data.responseJSON.role == 'ROLE_ADMIN') {
+						$(location).attr('href', 'index.html');	
+						}
+						if(data.responseJSON.role == 'ROLE_USER'){
+                        $(location).attr('href', 'pages/user/profile.html');
+						}	
+                    }
+                }
+            })
+        }
+    </script>
+
+</body>
+</html>
